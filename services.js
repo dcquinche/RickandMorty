@@ -20,6 +20,29 @@ function getEpisodes (){
   })
 }
 
+function getCharacterEpisodes(arg){
+    axios.get(`https://rickandmortyapi.com/api/character/${arg}`)
+  .then(function(res) {
+    console.log(res.data) 
+  })
+  .catch(function(error){
+    console.error(error)
+  })
+}
+
+function getEpisodeCharacters(arg){
+    axios.get(`https://rickandmortyapi.com/api/episode/${arg}`)
+  .then(function(res) {
+    console.log(res.data) 
+  })
+  .catch(function(error){
+    console.error(error)
+  })
+}
+
+
+module.exports = {getCharacters, getEpisodes, getCharacterEpisodes, getEpisodeCharacters}
+
 
 
 
